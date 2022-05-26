@@ -1,0 +1,78 @@
+﻿@page "/products/new"
+
+<MudText Typo="Typo.h5" Color="Color.Primary" Class="mb-4">Proizvod</MudText>
+
+<EditForm Model="@Context" OnValidSubmit="@OnValidSubmit">
+    <DataAnnotationsValidator />
+
+    <MudPaper Elevation="1" Outlined="false">
+        <MudToolBar Dense="true">
+
+
+
+            <MudButton Variant="Variant.Filled" Color="Color.Primary" ButtonType="ButtonType.Submit">Spremi</MudButton>
+
+
+            <MudButton Variant="Variant.Filled" Color="Color.Warning" OnClick="@GoBack" Class="ml-2">Natrag</MudButton>
+
+            <MudSpacer />
+
+        </MudToolBar>
+    </MudPaper>
+
+    <br />
+
+    <MudGrid Spacing="1">
+        <MudItem xs="12">
+            <MudCard>
+                <MudCardContent>
+                    <MudGrid Spacing="1">
+                        <MudItem xs="12" md="6">
+                            <MudTextField Margin="Margin.Dense"
+                                          Label="Naslov"
+                                          @bind-Value="Context.Title" For="@(() => Context.Title)"
+                                          Variant="Variant.Outlined" />
+                        </MudItem>
+
+                        <MudItem xs="12" md="6">
+                            <MudNumericField Margin="Margin.Dense"
+                                             Label="Cijena"
+                                             @bind-Value="Context.Price"
+                                             For="@(() => Context.Price)"
+                                             Variant="Variant.Outlined" />
+                        </MudItem>
+
+                        <MudItem xs="12" md="6">
+                            <MudTextField Margin="Margin.Dense"
+                                          Label="Kategorija"
+                                          @bind-Value="Context.Category"
+                                          For="@(() => Context.Category)"
+                                          Variant="Variant.Outlined" />
+                        </MudItem>
+
+                        <MudItem xs="12" md="6">
+                            <MudTextField Margin="Margin.Dense"
+                                          Label="Poveznica na sliku"
+                                          @bind-Value="Context.Image"
+                                          For="@(() => Context.Image)"
+                                          Variant="Variant.Outlined" />
+                        </MudItem>
+
+                        <MudItem xs="12" md="12">
+                            <MudTextField Margin="Margin.Dense"
+                                          Label="Opis"
+                                          Lines="3"
+                                          @bind-Value="Context.Description"
+                                          For="@(() => Context.Description)"
+                                          Variant="Variant.Outlined" />
+                        </MudItem>
+
+
+
+
+                    </MudGrid>
+                </MudCardContent>
+            </MudCard>
+        </MudItem>
+    </MudGrid>
+</EditForm>

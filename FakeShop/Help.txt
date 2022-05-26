@@ -1,0 +1,8 @@
+API dokumentacija
+https://fakestoreapi.com/docs
+
+MudBlazor dokumentacija
+https://mudblazor.com/docs/overview
+
+Blazor tutorial
+https://blazor-university.com/

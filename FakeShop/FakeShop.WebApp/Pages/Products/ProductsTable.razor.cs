@@ -10,13 +10,23 @@ namespace FakeShop.WebApp.Pages.Products
         [Inject]
         protected IProductClientService _productClientService { get; set; }
 
+        [Inject]
+        public NavigationManager NavigationManager { get; set; }
+
 
         private ICollection<Product> _productList = null;
+
+        public bool IsBusy { get => _productList == null; }
 
         protected override async Task OnInitializedAsync()
         {
             _productList = await _productClientService.GetAllAsync();
             await base.OnInitializedAsync();
+        }
+
+        public async Task New()
+        {
+            NavigationManager.NavigateTo("products/new");
         }
     }
 

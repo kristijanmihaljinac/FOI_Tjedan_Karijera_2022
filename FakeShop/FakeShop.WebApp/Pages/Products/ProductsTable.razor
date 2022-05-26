@@ -1,28 +1,36 @@
 ﻿@page "/products"
 
-<MudText Align="Align.Center" Typo="Typo.h1"><b>Proizvodi</b></MudText>
 
-@if (_productList == null)
+
+<MudPaper Elevation="1" Outlined="false">
+    <MudToolBar Dense="true">
+
+        <MudButton StartIcon="@Icons.Filled.AddCircle" Color="Color.Primary" OnClick="@(() => New())">Novi proizvod</MudButton>
+    </MudToolBar>
+</MudPaper>
+<br />
+<br />
+
+<BusyIndicator IsBusy="@IsBusy" />
+
+
+@if(_productList != null)
 {
-    <MudProgressCircular Color="Color.Default" Indeterminate="true" />
-}
-else
-{
-    <MudGrid Spacing="1">
-        @foreach (var product in _productList)
-        {
-            <MudItem md="3">
-                <MudCard >
-                    <MudCardMedia Image="@product.Image" Height="200" />
-                    <MudCardContent >
-                        <MudText Typo="Typo.h5">@product.Title</MudText>
-                        <MudText Typo="Typo.body2" Class="overflow-auto ">@product.Description</MudText>
-                    </MudCardContent>
-                    <MudCardActions>
-                        <MudButton Variant="Variant.Text" Color="Color.Primary">Details</MudButton>
-                    </MudCardActions>
-                </MudCard>
-            </MudItem>
-        }
-    </MudGrid>
+<MudGrid Spacing="1">
+    @foreach (var product in _productList)
+    {
+        <MudItem md="3">
+            <MudCard>
+                <MudCardMedia Image="@product.Image" Height="200" />
+                <MudCardContent>
+                    <MudText Typo="Typo.h5">@product.Title</MudText>
+                    <MudText Typo="Typo.body2" Class="overflow-auto ">@product.Description</MudText>
+                </MudCardContent>
+                <MudCardActions>
+                   @* <MudButton Variant="Variant.Text" Color="Color.Primary">Details</MudButton>*@
+                </MudCardActions>
+            </MudCard>
+        </MudItem>
+    }
+</MudGrid>
 }

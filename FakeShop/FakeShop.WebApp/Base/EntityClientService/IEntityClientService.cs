@@ -6,7 +6,6 @@ namespace FakeShop.WebApp.Base.EntityClientService
     public interface IEntityClientService<TModel>
          where TModel : class
     {
-        Task<GridData<TModel>> GetAllGridDataAsync(string options = "");
 
         Task<ICollection<TModel>> GetAllAsync();
 
@@ -17,6 +16,6 @@ namespace FakeShop.WebApp.Base.EntityClientService
         Task<HttpResponseMessage> UpdateAsync(int id, TModel data);
 
         Task<HttpResponseMessage> DeleteAsync(int id);
-
+        
     }
 }

@@ -1,0 +1,13 @@
+﻿
+    @if (IsBusy)
+    {
+          <MudProgressCircular Color="Color.Secondary" Indeterminate="true" Style="position:fixed;left:50%;right:50%;" />
+    }
+  
+
+
+@code {
+
+    [Parameter]
+    public bool IsBusy { get; set; } = false;
+}

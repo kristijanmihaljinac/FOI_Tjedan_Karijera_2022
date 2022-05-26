@@ -35,34 +35,22 @@ namespace FakeShop.WebApp.Base.EntityClientService
             return await Http.GetFromJsonAsync<TModel>($"{Path}/{id}");
         }
 
-        public virtual async Task<GridData<TModel>> GetAllGridDataAsync(string options = "")
-        {
-            if (!options.Contains("orderby"))
-            {
-                options += "&$orderby = id desc";
-            }
-
-            return await Http.GetFromJsonAsync<GridData<TModel>>($"{BASE_PATH}/{Path}/GetGrid?{options}").ConfigureAwait(false);
-        }
 
         public async Task<HttpResponseMessage> CreateAsync(TModel data)
         {
-            return await Http.PostAsJsonAsync<TModel>($"{BASE_PATH}/{Path}", data).ConfigureAwait(false);
+            return await Http.PostAsJsonAsync<TModel>($"{Path}", data).ConfigureAwait(false);
         }
 
         public async Task<HttpResponseMessage> UpdateAsync(int id, TModel data)
         {
-            return await Http.PutAsJsonAsync<TModel>($"{BASE_PATH}/{Path}/{id}", data);
+            return await Http.PutAsJsonAsync<TModel>($"{Path}/{id}", data);
         }
 
         public async Task<HttpResponseMessage> DeleteAsync(int id)
         {
-            return await Http.DeleteAsync($"{BASE_PATH}/{Path}/{id}").ConfigureAwait(false);
+            return await Http.DeleteAsync($"{Path}/{id}").ConfigureAwait(false);
         }
 
-        public async Task<HttpResponseMessage> Validate(TModel model)
-        {
-            return await Http.PostAsJsonAsync<TModel>($"{BASE_PATH}/{Path}/Validate", model).ConfigureAwait(false);
-        }
+      
     }
 }
