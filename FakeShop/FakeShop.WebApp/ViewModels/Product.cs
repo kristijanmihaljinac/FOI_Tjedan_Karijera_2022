@@ -20,6 +20,5 @@ namespace FakeShop.WebApp.ViewModels
         [Required(ErrorMessage = "Kategorija je obavezna.")]
         public string Category { get; set; }
         public string Image { get; set; }
-        //public Rating Rating { get; set; }
     }
 }

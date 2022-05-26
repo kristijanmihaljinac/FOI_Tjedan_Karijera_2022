@@ -6,3 +6,15 @@ https://mudblazor.com/docs/overview
 
 Blazor tutorial
 https://blazor-university.com/
+
+
+ZADACI: 
+1) Implementirati pregled proizvoda koristeæi MudTable komponentu
+
+2) Implementirati pregled kategorija proizvoda
+
+3) Implementirati brisanje proizvoda (HINT - potrebno pitati korisnika je li siguran želi li obrisati proizvod)  https://mudblazor.com/components/dialog#usage
+
+4) Implementirati prikaz nekog drugog sortiranja po metodi koju sami odaberete
+
+5) VAŠA IDEJA
