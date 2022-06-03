@@ -1,4 +1,4 @@
-# FOI_Tjedan_Karijera_2022
+# FOI_Tjedan_Karijera_2022 ( FOI Career Week 2022 )
 
 Blazor - Moderne web aplikacije bez JavaScripta ( Modern web applications without JavaScript)
 
