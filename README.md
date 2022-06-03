@@ -7,4 +7,5 @@ Demo application that was used for presentation.
 Used technologies:
  - Blazor WASM - .NET 6
  - MudBlazor components - https://mudblazor.com
+ - Fake store API - https://fakestoreapi.com
 
